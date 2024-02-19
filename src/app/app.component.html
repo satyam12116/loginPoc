@@ -1,16 +1,5 @@
-<div class="login">
-  <h2 class="login-header">Log in</h2>
-
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-container">
-   
-      <input matInput formControlName="username" placeholder="Username">
-    <div *ngIf="loginForm.get('username')?.hasError('pattern') && !loginForm.get('username')?.hasError('required')">
-      Invalid email format.
-    </div>
-    <mat-error *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched">Username is required</mat-error>
-   
-    <input matInput formControlName="password" type="password" placeholder="Password">
-      <mat-error *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">Password is required</mat-error>
-      <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
-  </form>
-</div>
+<nav>
+  <a routerLink="/add-product">Add Product</a>
+  <a routerLink="/product-list">Product List</a>
+</nav>
+<router-outlet></router-outlet>
